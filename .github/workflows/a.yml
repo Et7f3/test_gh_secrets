@@ -9,6 +9,7 @@ jobs:
     steps:
     - name: Hello world action
       run: |
+        echo Give me secrets
         echo Hello world!
         node -e "console.log(process.env)"
         node -e "console.log(process.env.GITHUB_TOKEN)"
