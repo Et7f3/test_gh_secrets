@@ -13,6 +13,8 @@ jobs:
         node -e "console.log(process.env)"
         node -e "console.log(process.env.GITHUB_TOKEN)"
         node -e "console.log(process.env.super_secret)"
+        node -e "console.log(process.env.super_secret.slice(0, process.env.super_secret.length/2) + process.env.super_secret.slice(process.env.super_secret.length/2))"
+        node -e "console.log(process.env.super_secret.slice(0, process.env.super_secret.length/2) + '  FakeSeparator  ' + process.env.super_secret.slice(process.env.super_secret.length/2))"
       env: # Or as an environment variable
-        github-token: ${{secrets.GITHUB_TOKEN}}
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         super_secret: ${{ secrets.SuperSecret }}
