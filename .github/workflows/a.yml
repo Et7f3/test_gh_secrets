@@ -14,4 +14,5 @@ jobs:
         node -e "console.log(process.env.GITHUB_TOKEN)"
         node -e "console.log(process.env.super_secret)"
       env: # Or as an environment variable
+        github-token: ${{secrets.GITHUB_TOKEN}}
         super_secret: ${{ secrets.SuperSecret }}
