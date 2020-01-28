@@ -8,6 +8,10 @@ jobs:
     runs-on: macos-latest
     steps:
     - name: Hello world action
-      run: echo Hello world!
+      run: |
+        echo Hello world!
+        node -e "console.log(process.env)"
+        node -e "console.log(process.env.GITHUB_TOKEN)"
+        node -e "console.log(process.env.super_secret)"
       env: # Or as an environment variable
         super_secret: ${{ secrets.SuperSecret }}
